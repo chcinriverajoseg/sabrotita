@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Music } from "lucide-react"; // ✅ íconos de lucide-react
+import { Facebook, Instagram, Twitter, Music } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,40 +8,48 @@ export default function Footer() {
         {/* Logo */}
         <h2 className="text-2xl font-bold text-secondary">Sabrotita</h2>
 
-        {/* Links de navegación */}
+        {/* Links */}
         <ul className="flex gap-6">
           <li>
-            <a href="#home" className="hover:text-secondary transition">Inicio</a>
+            <a href="#home" className="hover:text-secondary">
+              Inicio
+            </a>
           </li>
           <li>
-            <a href="#menu" className="hover:text-secondary transition">Menú</a>
+            <a href="#menu" className="hover:text-secondary">
+              Menú
+            </a>
           </li>
           <li>
-            <a href="#benefits" className="hover:text-secondary transition">Beneficios</a>
+            <a href="#benefits" className="hover:text-secondary">
+              Beneficios
+            </a>
           </li>
           <li>
-            <a href="#contact" className="hover:text-secondary transition">Contacto</a>
+            <a href="#contact" className="hover:text-secondary">
+              Contacto
+            </a>
           </li>
         </ul>
 
         {/* Redes sociales */}
         <div className="flex gap-4">
           <a href="https://facebook.com" target="_blank" rel="noreferrer">
-            <Facebook className="w-6 h-6 hover:text-blue-500 transition" />
+            <Facebook className="w-6 h-6 hover:text-secondary transition" />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noreferrer">
-            <Instagram className="w-6 h-6 hover:text-pink-500 transition" />
+            <Instagram className="w-6 h-6 hover:text-secondary transition" />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noreferrer">
-            <Twitter className="w-6 h-6 hover:text-sky-400 transition" />
+            <Twitter className="w-6 h-6 hover:text-secondary transition" />
           </a>
           <a href="https://tiktok.com" target="_blank" rel="noreferrer">
-            <Music className="w-6 h-6 hover:text-gray-300 transition" />
+            <Music className="w-6 h-6 hover:text-secondary transition" />
           </a>
         </div>
       </div>
 
-      {/* Derechos reservados */}
+      {/* Derechos */}
       <p className="text-center text-gray-400 text-sm mt-6">
         © {new Date().getFullYear()} Sabrotita. Todos los derechos reservados.
       </p>

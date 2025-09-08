@@ -1,10 +1,10 @@
-@tailwind base;
+/*@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* 🔥 ANIMACIONES PERSONALIZADAS */
 
-/* Fade In */
+/* Fade In 
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -13,7 +13,7 @@
   animation: fadeIn 0.8s ease-in-out forwards;
 }
 
-/* Slide Up */
+/* Slide Up 
 @keyframes slideUp {
   from { transform: translateY(40px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
@@ -22,7 +22,7 @@
   animation: slideUp 0.6s ease-out forwards;
 }
 
-/* Slide In Right (para carrito lateral) */
+/* Slide In Right (para carrito lateral) 
 @keyframes slideInRight {
   from { transform: translateX(100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
@@ -31,7 +31,7 @@
   animation: slideInRight 0.4s ease-out forwards;
 }
 
-/* Bounce + Pop (para íconos y botones llamativos) */
+/* Bounce + Pop (para íconos y botones llamativos) 
 @keyframes bouncePop {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.2); }
@@ -40,7 +40,7 @@
   animation: bouncePop 0.6s ease-in-out infinite;
 }
 
-/* Shake (para errores en formularios) */
+/* Shake (para errores en formularios) 
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
@@ -48,4 +48,28 @@
 }
 .animate-shake {
   animation: shake 0.4s ease-in-out;
+}*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importar Poppins */
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+
+/* Animación de degradado */
+.animate-gradient {
+  background-size: 200% 200%;
+
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradient 6s ease infinite;
 }
