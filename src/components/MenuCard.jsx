@@ -4,8 +4,8 @@ export default function MenuCard({ title, image, description, price }) {
   const { addToCart } = useCart();
 
   const handleAdd = () => {
-    addToCart({ title, price, image }); // 👈 ahora también pasa la imagen
-    const audio = new Audio("/sounds/add.mp3");
+    addToCart({ title, price });
+    const audio = new Audio("/sounds/add.mp3"); // 🔊 sonido agregar
     audio.play();
   };
 
@@ -16,7 +16,7 @@ export default function MenuCard({ title, image, description, price }) {
 
       {/* Contenido */}
       <div className="p-5 flex flex-col flex-grow">
-        <h4 className="text-xl font-bold mb-2">{title}</h4>
+        <h4 className="text-xl font-bold mb-2 text-black">{title}</h4>
         <p className="text-gray-600 flex-grow">{description}</p>
         <p className="text-lg font-semibold text-primary mt-4">💲{price}</p>
 

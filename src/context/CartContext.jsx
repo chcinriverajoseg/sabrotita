@@ -1,26 +1,46 @@
 import { createContext, useContext, useState } from "react";
 
+// Creamos el contexto
 const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+// Hook para usar el contexto en cualquier componente
+export function useCart() {
+  return useContext(CartContext);
+}
 
-  const addToCart = (item) => setCart((prev) => [...prev, item]);
+// Proveedor del carrito
+export function CartProvider({ children }) {
+  const [cart, setCart] = useState([]); // 🛒 lista de productos
+  const [isCartOpen, setIsCartOpen] = useState(false); // 👈 estado del panel lateral
 
-  const removeFromCart = (index) => {
-    setCart((prev) => prev.filter((_, i) => i !== index));
+  // Agregar producto
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+    setIsCartOpen(true); // cuando agregamos, se abre el carrito automáticamente
   };
 
-  const clearCart = () => setCart([]);
+  // Eliminar un producto por índice
+  const removeFromCart = (index) => {
+    setCart(cart.filter((_, i) => i !== index));
+  };
+
+  // Vaciar carrito
+  const clearCart = () => {
+    setCart([]);
+  };
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart, isCartOpen, setIsCartOpen }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        isCartOpen,
+        setIsCartOpen,
+      }}
     >
       {children}
     </CartContext.Provider>
   );
-};
-
-export const useCart = () => useContext(CartContext);
+}
