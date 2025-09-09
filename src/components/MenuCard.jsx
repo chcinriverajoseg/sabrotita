@@ -4,13 +4,9 @@ export default function MenuCard({ title, image, description, price }) {
   const { addToCart } = useCart();
 
   const handleAdd = () => {
-    addToCart({ title, price });
-
-    // reproducir sonido si existe
+    addToCart({ title, price, image }); // 👈 ahora también pasa la imagen
     const audio = new Audio("/sounds/add.mp3");
-    audio.play().catch(() => {
-      console.warn("El navegador bloqueó el autoplay o no encontró el audio.");
-    });
+    audio.play();
   };
 
   return (
